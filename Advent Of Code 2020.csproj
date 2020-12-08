@@ -7,4 +7,8 @@
         <LangVersion>8</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Content Include="Inputs\day8input.txt" />
+    </ItemGroup>
+
 </Project>
