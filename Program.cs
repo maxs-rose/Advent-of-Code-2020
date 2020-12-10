@@ -38,10 +38,15 @@ namespace Advent_Of_Code_2020
             // Day7.RunDay7Part1();
             // Day7.RunDay7Part2();
             
-            Day8.puzzleInput = System.IO.File.ReadAllLines(@"C:\Users\max\Documents\currentprojects\Advent Of Code 2020\Inputs\day8inputtest.txt");
-            Day8.puzzleInput = System.IO.File.ReadAllLines(@"C:\Users\max\Documents\currentprojects\Advent Of Code 2020\Inputs\day8input.txt");
-            Day8.RunDay8Part1();
-            Day8.RunDay8Part2();
+            // Day8.puzzleInput = System.IO.File.ReadAllLines(@"C:\Users\max\Documents\currentprojects\Advent Of Code 2020\Inputs\day8inputtest.txt");
+            // Day8.puzzleInput = System.IO.File.ReadAllLines(@"C:\Users\max\Documents\currentprojects\Advent Of Code 2020\Inputs\day8input.txt");
+            // Day8.RunDay8Part1();
+            // Day8.RunDay8Part2();
+            
+            // Day9.puzzleInput = System.IO.File.ReadAllLines(@"C:\Users\max\Documents\currentprojects\Advent Of Code 2020\Inputs\day9inputtest.txt");
+            // Day9.puzzleInput = System.IO.File.ReadAllLines(@"C:\Users\max\Documents\currentprojects\Advent Of Code 2020\Inputs\day9input.txt");
+            // Console.WriteLine(Day9.RunDay9Part1());
+            // Day9.RunDay9Part2();
         }
     }
 }
