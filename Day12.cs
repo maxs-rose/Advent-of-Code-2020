@@ -36,7 +36,6 @@ namespace Advent_Of_Code_2020
                             currentDir = currentDir - 1 >= 0 ? (currentDir - 1) % 4 : 3;
                             dist -= 90;
                         }
-                        
                         break;
                     case 'R':
                         while(dist != 0)
@@ -44,7 +43,6 @@ namespace Advent_Of_Code_2020
                             currentDir = (currentDir + 1) % 4;
                             dist -= 90;
                         }
-                        
                         break;
                     case 'F':
                         totalMovement(ref movement, dist, currentDir, (currentDir + 2) % 4);
@@ -125,48 +123,17 @@ namespace Advent_Of_Code_2020
 
         private static void moveShip(ref int[] ship, ref int[] waypoint, int movements)
         {
-            // move ship north
-            var north = waypoint[0] * movements;
-            if (ship[2] > north)
-                ship[2] -= north;
-            else
+            for (var i = 0; i < 4; i++)
             {
-                var d = north - ship[2];
-                ship[2] = 0;
-                ship[0] += d;
-            }
-            
-            // move ship south
-            var south = waypoint[2] * movements;
-            if (ship[0] > south)
-                ship[0] -= south;
-            else
-            {
-                var d = south - ship[0];
-                ship[0] = 0;
-                ship[2] += d;
-            }
-            
-            // move ship east
-            var east = waypoint[1] * movements;
-            if (ship[3] > east)
-                ship[3] -= east;
-            else
-            {
-                var d = east - ship[3];
-                ship[3] = 0;
-                ship[1] += d;
-            }
-            
-            // move ship west
-            var west = waypoint[3] * movements;
-            if (ship[1] > west)
-                ship[1] -= west;
-            else
-            {
-                var d = west - ship[1];
-                ship[1] = 0;
-                ship[3] += d;
+                var move = waypoint[i] * movements;
+                if (ship[(i + 2) % 4] > move)
+                    ship[(i + 2) % 4] -= move;
+                else
+                {
+                    var d = move - ship[(i + 2) % 4];
+                    ship[(i + 2) % 4] = 0;
+                    ship[i] += d;
+                }
             }
         }
 
