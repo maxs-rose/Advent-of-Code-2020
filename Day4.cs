@@ -26,11 +26,10 @@ namespace Advent_Of_Code_2020
                 }
             }
 
-            if (currentLines.Count() > 0)
-            {
-                passports.Add(new Passport(currentLines.ToArray()));
-                currentLines.Clear();
-            }            
+            if (!currentLines.Any()) return;
+            
+            passports.Add(new Passport(currentLines.ToArray()));
+            currentLines.Clear();
         }
         
         public static void RunDay4Part1()
@@ -39,14 +38,15 @@ namespace Advent_Of_Code_2020
 
             foreach (var passport in passports)
             {
-                if (passport.values.Keys.Count() == 8)
+                switch (passport.values.Keys.Count())
                 {
-                    validPassports++;
-                    continue;
+                    case 8:
+                        validPassports++;
+                        continue;
+                    case 7 when !passport.values.ContainsKey("cid"):
+                        validPassports++;
+                        break;
                 }
-
-                if (passport.values.Keys.Count() == 7 && !passport.values.ContainsKey("cid"))
-                    validPassports++;
             }
             
             Console.WriteLine(validPassports);
@@ -122,8 +122,7 @@ namespace Advent_Of_Code_2020
 
                 valid++;
                 
-                NextPassport:
-                continue;
+                NextPassport:;
             }
             
             Console.WriteLine(valid);

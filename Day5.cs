@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace Advent_Of_Code_2020
 {
@@ -29,7 +28,7 @@ namespace Advent_Of_Code_2020
 
         public static void RunDay5Part2()
         {
-            List<int> seatIds = new List<int>();
+            var seatIds = new List<int>();
             
             foreach (var pass in puzzleInput)
             {
