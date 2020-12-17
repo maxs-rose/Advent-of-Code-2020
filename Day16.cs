@@ -71,11 +71,9 @@ namespace Advent_Of_Code_2020
                     {
                         if ((ticket[i] >= rule.range1[0] && ticket[i] <= rule.range1[1]) || (ticket[i] >= rule.range2[0] && ticket[i] <= rule.range2[1]))
                             continue;
-                        else
-                        {
-                            rule.possibleIndexes.Remove(i);
-                            break;
-                        }
+                            
+                        rule.possibleIndexes.Remove(i);
+                        break;
                     }
                 }
             }
